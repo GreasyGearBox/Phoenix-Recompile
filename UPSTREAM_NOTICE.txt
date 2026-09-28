@@ -1,0 +1,8 @@
+This compatibility port is based on the Deeps source by Relliko / kjLotus:
+https://github.com/relliko/Deeps
+
+The upstream source files carry GNU GPL v3-or-later notices. This package
+includes the corresponding source for this port and a copy of GPLv3.
+
+Ashita interface definitions were matched against the public Ashita v4 SDK:
+https://github.com/AshitaXI/Ashita-v4beta

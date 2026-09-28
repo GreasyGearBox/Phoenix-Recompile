@@ -1,0 +1,18 @@
+Build target: i686-pc-windows-msvc / Ashita interface 4.30
+
+Compiler/linker:
+clang++ --target=i686-pc-windows-msvc -std=c++17 -O2 -ffreestanding   -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-stack-protector   -fno-builtin -Wall -Wextra -Wpedantic -c deeps430.cpp -o deeps430.obj
+
+lld-link /dll /noentry /machine:x86 /nodefaultlib /opt:ref /opt:icf   deeps430.obj /def:Exports.def /out:Deeps.dll
+
+SHA-256:
+5518b21aaaf9698cb97dacd6199b9df7924d4780e9fe0df14f9fff9443dfa261  Deeps.dll
+
+Parser self-test output:
+PASS: 35-byte one-hit melee          size=35 bytes actions=1 category=1 param=0
+      old failed build required ~46 bytes and rejected this packet
+PASS: two actions / one target       size=45 bytes actions=2 category=1 param=0
+PASS: additional effect + next hit   size=50 bytes actions=2 category=1 param=0
+PASS: spikes block + next hit        size=50 bytes actions=2 category=1 param=0
+PASS: two targets / variable counts  size=61 bytes actions=3 category=1 param=0
+ALL SYNTHETIC ACTION-PACKET TESTS PASSED
